@@ -1,5 +1,6 @@
 package org.carebridge.carebridgeadminapi.faq.mapper;
 
+<<<<<<< HEAD
 import org.carebridge.carebridgeadminapi.faq.dto.FAQDTO;
 import java.util.List;
 
@@ -19,4 +20,8 @@ public interface FAQMapper {
 
     // 특정 FAQ 삭제
     int deleteFAQ(int id);
+=======
+public interface FAQMapper {
+
+>>>>>>> c0e2842a996364190a34ebd8343e05bf5c5141b3
 }
