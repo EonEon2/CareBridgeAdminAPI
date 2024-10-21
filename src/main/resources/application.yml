@@ -9,8 +9,16 @@ spring:
     password: careuser
 
 
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 5
+      connection-timeout: 10000
+
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
-  type-aliases-package: org.demo.springdemo2.**.dto
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com.zaxxer: info
+    org.springframework: info
+
