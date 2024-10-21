@@ -1,6 +1,7 @@
 package org.carebridge.carebridgeadminapi;
 
 import lombok.extern.log4j.Log4j2;
+
 import org.carebridge.carebridgeadminapi.time.mapper.TimeMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ class CareBridgeAdminApiApplicationTests {
 
     @Test
     void contextLoads() {
+        log.info("------------test--------------");
     }
 
 }
