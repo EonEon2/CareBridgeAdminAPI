@@ -9,10 +9,18 @@ spring:
     password: careuser
 
 
+  hikari:
+    minimum-idle: 1
+    maximum-pool-size: 5
+    connection-timeout: 10000
+
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
   type-aliases-package:
     org.carebridge.carebridgeadminapi.qna.dto,
-    org.carebridge.carebridgeadminapi.faq.dto,
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    org.carebridge.carebridgeadminapi.faq.dto
+
+logging:
+  level:
+    com.zaxxer: info
+    org.springframework: info
