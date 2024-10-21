@@ -8,3 +8,8 @@ spring:
     username: careuser
     password: careuser
 
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: org.demo.CareBridgeAdminAPI.**.dto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
