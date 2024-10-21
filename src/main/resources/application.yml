@@ -8,6 +8,7 @@ spring:
     username: careuser
     password: careuser
 
+
     hikari:
       minimum-idle: 1
       maximum-pool-size: 5
@@ -20,3 +21,4 @@ logging:
   level:
     com.zaxxer: info
     org.springframework: info
+
