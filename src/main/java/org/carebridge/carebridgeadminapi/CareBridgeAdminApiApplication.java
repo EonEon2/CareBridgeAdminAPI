@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan(basePackages = {"org.carebridge.carebridgeadminapi.**.mapper"})
+@MapperScan(basePackages = {"org.carebridge.carebridgeadminapi.time.mapper"})
 public class CareBridgeAdminApiApplication {
 
     public static void main(String[] args) {
