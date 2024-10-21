@@ -11,6 +11,6 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
-  type-aliases-package: org.demo.springdemo2.**.dto
+  type-aliases-package: org.carebridge.carebridgeadminapi.**.dto
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
