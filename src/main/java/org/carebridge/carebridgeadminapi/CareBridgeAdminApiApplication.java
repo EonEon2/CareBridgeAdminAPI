@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
+@MapperScan("org.carebridge.carebridgeadminapi.**.mapper" )
 public class CareBridgeAdminApiApplication {
 
     public static void main(String[] args) {
