@@ -5,10 +5,8 @@
 
 <mapper namespace="org.carebridge.carebridgeadminapi.faq.mapper.FAQMapper">
 
-    <!-- 전체 FAQ 목록 조회 -->
-    <select id="getAllFAQs" resultType="org.carebridge.carebridgeadminapi.faq.dto.FAQ">
-        SELECT * FROM faq
+    <select id="getAllFAQs" resultType="FAQVO">
+        select * from faq
     </select>
-
 
 </mapper>
