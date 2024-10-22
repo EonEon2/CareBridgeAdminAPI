@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.carebridge.carebridgeadminapi.faq.mapper.FAQMapper">
+
+    <!-- FAQ 조회  -->
+    <select id="getAllFAQs" resultType="FAQListDTO">
+        select * from faq
+        where fdelete = false
+    </select>
+
+    <!-- FAQ 등록 -->
+    <insert id="insertFAQ" parameterType="FAQUpdateDTO" useGeneratedKeys="true" keyProperty="fno">
+        insert into faq (fcategory, ftitle, fcontent)
+        values (#{fcategory}, #{ftitle}, #{fcontent})
+    </insert>
+
+    <!-- FAQ 수정  -->
+    <update id="updateFAQ" parameterType="FAQUpdateDTO">
+        update faq
+        set fcategory = #{fcategory},
+            ftitle = #{ftitle},
+            fcontent = #{fcontent}
+        where fno = #{fno}
+    </update>
+
+    <!-- FAQ 삭제 -->
+    <update id="softDeleteFAQ" parameterType="long">
+        update faq
+        set fdelete = true
+        WHERE fno = #{fno}
+    </update>
+
+    <!-- FAQ 상세 조회 -->
+    <select id="getOne" parameterType="long" resultType="FAQUpdateDTO">
+        select * from faq
+        WHERE fno = #{fno}
+    </select>
+
+</mapper>
