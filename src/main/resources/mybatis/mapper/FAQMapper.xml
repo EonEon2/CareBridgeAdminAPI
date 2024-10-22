@@ -10,24 +10,5 @@
         SELECT * FROM faq
     </select>
 
-    <!-- FAQ 목록 페이징 조회 -->
-    <select id="getFAQsPaged" resultType="org.carebridge.carebridgeadminapi.faq.dto.FAQ">
-        SELECT * FROM faq LIMIT #{limit} OFFSET #{offset}
-    </select>
-
-    <!-- 새로운 FAQ 추가 -->
-    <insert id="insertFAQ" parameterType="org.carebridge.carebridgeadminapi.faq.dto.FAQ">
-        INSERT INTO faq (question, answer) VALUES (#{question}, #{answer})
-    </insert>
-
-    <!-- 기존 FAQ 수정 -->
-    <update id="updateFAQ" parameterType="org.carebridge.carebridgeadminapi.faq.dto.FAQ">
-        UPDATE faq SET question = #{question}, answer = #{answer} WHERE id = #{id}
-    </update>
-
-    <!-- 특정 FAQ 삭제 -->
-    <delete id="deleteFAQ" parameterType="int">
-        DELETE FROM faq WHERE id = #{id}
-    </delete>
 
 </mapper>

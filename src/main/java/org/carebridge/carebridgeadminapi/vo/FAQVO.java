@@ -1,0 +1,24 @@
+package org.carebridge.carebridgeadminapi.vo;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class FAQVO {
+
+    private int fno;
+
+    private String fcategory;
+
+    private String ftitle;
+
+    private String fcontent;
+
+    private boolean fdelete;
+
+}
