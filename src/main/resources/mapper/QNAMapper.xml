@@ -8,6 +8,7 @@
     <select id="getList" resultType="QNAListDTO">
         select qno, qtitle, qdelete, regDate, modDate
         from qna
+        where qdelete = 0
         order by qno desc
         limit #{skip}, #{size}
     </select>
