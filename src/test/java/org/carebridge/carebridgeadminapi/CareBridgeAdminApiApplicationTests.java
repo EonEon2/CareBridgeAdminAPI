@@ -2,7 +2,7 @@ package org.carebridge.carebridgeadminapi;
 
 import lombok.extern.log4j.Log4j2;
 
-import org.carebridge.carebridgeadminapi.faq.mapper.FAQMapper;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -14,13 +14,4 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class CareBridgeAdminApiApplicationTests {
 
 
-    @Autowired
-    FAQMapper faqMapper;
-
-    @Test
-    public void contextLoads() {
-        log.info(faqMapper.getAllFAQs());
-    }
-
-    }
-
+}

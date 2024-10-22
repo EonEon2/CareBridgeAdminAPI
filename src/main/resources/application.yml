@@ -16,12 +16,9 @@ spring:
 
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
-  type-aliases-package: org.carebridge.carebridgeadminapi.**.dto, 
-                        org.carebridge.carebridgeadminapi.**.vo
+  type-aliases-package: org.carebridge.carebridgeadminapi.**.dto
 
 logging:
   level:
     com.zaxxer: info
     org.springframework: info
-
-
