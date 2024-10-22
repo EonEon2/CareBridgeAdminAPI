@@ -33,4 +33,10 @@
         WHERE fno = #{fno}
     </update>
 
+    <!-- FAQ 상세 조회 -->
+    <select id="getOne" parameterType="long" resultType="FAQUpdateDTO">
+        select * from faq
+        WHERE fno = #{fno}
+    </select>
+
 </mapper>

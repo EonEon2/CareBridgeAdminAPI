@@ -18,4 +18,7 @@ public interface FAQMapper {
     // FAQ 삭제
     void softDeleteFAQ(long fno);
 
+    // FAQ 상세 조회
+    FAQUpdateDTO getOne(long fno);
+
 }

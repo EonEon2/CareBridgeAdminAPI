@@ -41,4 +41,9 @@ public class FAQService {
 
         faqMapper.softDeleteFAQ(fno);
     }
+
+    // FAQ 상세
+    public FAQUpdateDTO getOne(long fno) {
+        return faqMapper.getOne(fno);
+    }
 }

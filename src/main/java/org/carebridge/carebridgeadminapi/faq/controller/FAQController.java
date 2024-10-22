@@ -57,4 +57,12 @@ public class FAQController {
         return ResponseEntity.ok("Logical delete successful");
     }
 
+    // FAQ 상세 조회
+    @GetMapping("read/{fno}")
+    public ResponseEntity<FAQUpdateDTO> getOne(@PathVariable long fno) {
+        log.info("getFAQDetail: {}", fno);
+
+        FAQUpdateDTO faqDetail = faqService.getOne(fno);
+        return ResponseEntity.ok(faqDetail);
+    }
 }
