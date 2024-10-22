@@ -1,16 +1,14 @@
-package org.carebridge.carebridgeadminapi.controller;
+package org.carebridge.carebridgeadminapi.caretaker.controller;
 
 
-import com.sun.net.httpserver.Authenticator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.apache.coyote.Response;
 import org.carebridge.carebridgeadminapi.caretaker.dto.CareTakerDTO;
 import org.carebridge.carebridgeadminapi.caretaker.dto.CareTakerDetailDTO;
 import org.carebridge.carebridgeadminapi.caretaker.dto.CareTakerUpdateDTO;
 import org.carebridge.carebridgeadminapi.common.page.PageRequest;
 import org.carebridge.carebridgeadminapi.common.page.PageResponse;
-import org.carebridge.carebridgeadminapi.service.CareTakerService;
+import org.carebridge.carebridgeadminapi.caretaker.service.CareTakerService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
