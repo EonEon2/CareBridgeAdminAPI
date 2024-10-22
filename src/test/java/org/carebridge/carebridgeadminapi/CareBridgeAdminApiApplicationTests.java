@@ -13,13 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class CareBridgeAdminApiApplicationTests {
 
-    @Autowired(required = false)
-    QNAMapper   qnaMapper;
 
-    @Test
-    void contextLoads() {
-        log.info("------------test--------------");
-        log.info(qnaMapper.getQuestion());
-    }
 
 }
