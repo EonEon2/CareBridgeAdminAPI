@@ -5,8 +5,15 @@
 
 <mapper namespace="org.carebridge.carebridgeadminapi.faq.mapper.FAQMapper">
 
-    <select id="getAllFAQs" resultType="FAQVO">
+    <!-- FAQ 조회  -->
+    <select id="getAllFAQs" resultType="FAQListDTO">
         select * from faq
     </select>
+
+    <!-- FAQ 등록 -->
+    <insert id="insertFAQ" parameterType="FAQEditDTO" useGeneratedKeys="true" keyProperty="fno">
+        insert into faq (fcategory, ftitle, fcontent)
+
+    </insert>
 
 </mapper>

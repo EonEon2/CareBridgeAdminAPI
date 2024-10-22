@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class FAQVO {
 
-    private int fno;
+    private Long fno;
 
-    private String fcategory;
+    private FAQCategory fcategory;
 
     private String ftitle;
 
