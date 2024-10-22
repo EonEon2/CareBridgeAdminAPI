@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration
-        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<configuration>
+<mapper namespace="org.carebridge.carebridgeadminapi.qna.mapper.QNAMapper">
 
-</configuration>
+    <select id="getQuestion" resultType="string" >
+        select now()
+    </select>
+
+</mapper>
