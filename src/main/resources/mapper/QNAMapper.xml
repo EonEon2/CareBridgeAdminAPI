@@ -46,5 +46,14 @@
 
     </update>
 
+    <select id = 'getOne' resultType="QNADetailDTO">
+        select
+            qno, qtitle, qcontent, regDate ,modDate
+        from
+            qna
+        where
+            qno = #{qno}
+    </select>
+
 
 </mapper>

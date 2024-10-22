@@ -2,6 +2,7 @@ package org.carebridge.carebridgeadminapi.qna.mapper;
 
 import org.apache.ibatis.annotations.Param;
 import org.carebridge.carebridgeadminapi.common.page.PageRequest;
+import org.carebridge.carebridgeadminapi.qna.dto.QNADetailDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNARegisterDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNAListDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNAUpdateDTO;
@@ -19,5 +20,7 @@ public interface QNAMapper {
    int delete(Long qno);
 
    int update(@Param("qno") Long qno, @Param("dto") QNAUpdateDTO qnaUpdateDTO);
+
+   QNADetailDTO getOne(Long qno);
 
 }

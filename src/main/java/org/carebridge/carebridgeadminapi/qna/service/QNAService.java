@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.carebridge.carebridgeadminapi.common.page.PageRequest;
 import org.carebridge.carebridgeadminapi.common.page.PageResponse;
+import org.carebridge.carebridgeadminapi.qna.dto.QNADetailDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNAListDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNARegisterDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNAUpdateDTO;
@@ -55,6 +56,12 @@ public class QNAService {
         log.info("update Service");
 
         qnaMapper.update(qno,dto);
+    }
+
+    public QNADetailDTO getOne(Long qno) {
+        log.info("getOne Service");
+
+        return qnaMapper.getOne(qno);
     }
 
 

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.carebridge.carebridgeadminapi.common.page.PageRequest;
 import org.carebridge.carebridgeadminapi.common.page.PageResponse;
+import org.carebridge.carebridgeadminapi.qna.dto.QNADetailDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNAListDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNARegisterDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNAUpdateDTO;
@@ -52,5 +53,13 @@ public class QNAController {
         return "Success update";
     }
 
+    @GetMapping("read/{qno}")
+    public ResponseEntity<QNADetailDTO> getRead(@PathVariable Long qno){
+
+        log.info("Get Controller");
+
+        return ResponseEntity.ok(qnaService.getOne(qno));
+
+    }
 
 }
