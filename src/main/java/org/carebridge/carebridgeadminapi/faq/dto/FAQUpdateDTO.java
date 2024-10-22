@@ -3,7 +3,7 @@ package org.carebridge.carebridgeadminapi.faq.dto;
 import lombok.Data;
 
 @Data
-public class FAQEditDTO {
+public class FAQUpdateDTO {
 
     private Long fno;
 

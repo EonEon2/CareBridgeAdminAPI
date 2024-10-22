@@ -8,16 +8,17 @@
     <!-- FAQ 조회  -->
     <select id="getAllFAQs" resultType="FAQListDTO">
         select * from faq
+        where fdelete = false
     </select>
 
     <!-- FAQ 등록 -->
-    <insert id="insertFAQ" parameterType="FAQEditDTO" useGeneratedKeys="true" keyProperty="fno">
+    <insert id="insertFAQ" parameterType="FAQUpdateDTO" useGeneratedKeys="true" keyProperty="fno">
         insert into faq (fcategory, ftitle, fcontent)
         values (#{fcategory}, #{ftitle}, #{fcontent})
     </insert>
 
     <!-- FAQ 수정  -->
-    <update id="updateFAQ" parameterType="FAQEditDTO">
+    <update id="updateFAQ" parameterType="FAQUpdateDTO">
         update faq
         set fcategory = #{fcategory},
             ftitle = #{ftitle},

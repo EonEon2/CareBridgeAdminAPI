@@ -2,7 +2,7 @@ package org.carebridge.carebridgeadminapi.faq.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.carebridge.carebridgeadminapi.faq.dto.FAQEditDTO;
+import org.carebridge.carebridgeadminapi.faq.dto.FAQUpdateDTO;
 import org.carebridge.carebridgeadminapi.faq.dto.FAQListDTO;
 import org.carebridge.carebridgeadminapi.faq.mapper.FAQMapper;
 import org.springframework.stereotype.Service;
@@ -25,15 +25,15 @@ public class FAQService {
     }
 
     // FAQ 등록
-    public void insertFAQ(FAQEditDTO faqEditDTO) {
+    public void insertFAQ(FAQUpdateDTO faqUpdateDTO) {
 
-        faqMapper.insertFAQ(faqEditDTO);
+        faqMapper.insertFAQ(faqUpdateDTO);
     }
 
     // FAQ 수정
-    public void updateFAQ(FAQEditDTO faqEditDTO) {
+    public void updateFAQ(FAQUpdateDTO faqUpdateDTO) {
 
-        faqMapper.updateFAQ(faqEditDTO);
+        faqMapper.updateFAQ(faqUpdateDTO);
     }
 
     // FAQ 소프트 삭제
