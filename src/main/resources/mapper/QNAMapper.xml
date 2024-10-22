@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.carebridge.carebridgeadminapi.qna.mapper.QNAMapper">
+
+    <select id="getList" resultType="QNAListDTO">
+        select qno, qtitle, qdelete, regDate, modDate
+        from qna
+        where qdelete = 0
+        order by qno desc
+        limit #{skip}, #{size}
+    </select>
+
+    <select id="count" resultType="int">
+        select count(qno)
+        from qna
+        where qno > 0
+    </select>
+
+    <insert id="insert">
+        insert into qna (qtitle, qcontent)
+        values(#{qtitle}, #{qcontent})
+    </insert>
+
+    <delete id="delete">
+
+        UPDATE
+            qna
+        SET
+            qdelete = true
+        WHERE
+            qno = #{qno}
+
+    </delete>
+
+    <update id="update">
+
+        UPDATE
+            qna
+        SET
+            qtitle = #{dto.qtitle}, qcontent = #{dto.qcontent}, modDate = now()
+        WHERE
+            qno = #{qno}
+
+    </update>
+
+    <select id = 'getOne' resultType="QNADetailDTO">
+        select
+            qno, qtitle, qcontent, regDate ,modDate
+        from
+            qna
+        where
+            qno = #{qno}
+    </select>
+
+
+</mapper>

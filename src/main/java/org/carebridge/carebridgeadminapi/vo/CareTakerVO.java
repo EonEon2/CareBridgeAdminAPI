@@ -1,5 +1,6 @@
 package org.carebridge.carebridgeadminapi.vo;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,16 +10,16 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class FAQVO {
+public class CareTakerVO {
 
-    private Long fno;
+    private Long ctno;
 
-    private FAQCategory fcategory;
+    private String ctname;
+    private int ctage;
+    private String ctaddress;
+    private String ctphone;
 
-    private String ftitle;
-
-    private String fcontent;
-
-    private boolean fdelete;
+    private String ctemail;
+    private String ctpw;
 
 }
