@@ -15,6 +15,9 @@ class CareBridgeAdminApiApplicationTests {
     @Autowired(required = false)
     TimeMapper timeMapper;
 
+    @Autowired(required = false)
+    QNAMapper qnaMapper;
+
     @Test
     public void Test1(){
         log.info("------------");
@@ -22,8 +25,9 @@ class CareBridgeAdminApiApplicationTests {
     }
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
         log.info("------------test--------------");
+        log.info("!"+ qnaMapper.getQuestion());
     }
 
 }
