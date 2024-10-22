@@ -13,7 +13,7 @@
     <!-- FAQ 등록 -->
     <insert id="insertFAQ" parameterType="FAQEditDTO" useGeneratedKeys="true" keyProperty="fno">
         insert into faq (fcategory, ftitle, fcontent)
-
+        values (#{fcategory}, #{ftitle}, #{fcontent})
     </insert>
 
 </mapper>
