@@ -16,4 +16,20 @@
         values (#{fcategory}, #{ftitle}, #{fcontent})
     </insert>
 
+    <!-- FAQ 수정  -->
+    <update id="updateFAQ" parameterType="FAQEditDTO">
+        update faq
+        set fcategory = #{fcategory},
+            ftitle = #{ftitle},
+            fcontent = #{fcontent}
+        where fno = #{fno}
+    </update>
+
+    <!-- FAQ 삭제 -->
+    <update id="softDeleteFAQ" parameterType="long">
+        update faq
+        set fdelete = true
+        WHERE fno = #{fno}
+    </update>
+
 </mapper>

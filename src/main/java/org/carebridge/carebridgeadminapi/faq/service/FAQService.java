@@ -29,4 +29,16 @@ public class FAQService {
 
         faqMapper.insertFAQ(faqEditDTO);
     }
+
+    // FAQ 수정
+    public void updateFAQ(FAQEditDTO faqEditDTO) {
+
+        faqMapper.updateFAQ(faqEditDTO);
+    }
+
+    // FAQ 소프트 삭제
+    public void softDeleteFAQ(long fno) {
+
+        faqMapper.softDeleteFAQ(fno);
+    }
 }

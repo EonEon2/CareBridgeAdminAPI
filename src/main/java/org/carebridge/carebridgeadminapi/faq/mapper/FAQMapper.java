@@ -7,12 +7,16 @@ import java.util.List;
 
 public interface FAQMapper {
 
-    // 전체 FAQ 목록 조회
+    // FAQ 조회
     List<FAQListDTO> getAllFAQs();
 
     // FAQ 추가
     void insertFAQ(FAQEditDTO faqEditDTO);
 
+    // FAQ 수정
+    void updateFAQ(FAQEditDTO faqEditDTO);
 
+    // FAQ 삭제
+    void softDeleteFAQ(long fno);
 
 }

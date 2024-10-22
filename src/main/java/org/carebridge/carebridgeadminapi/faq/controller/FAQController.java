@@ -18,7 +18,7 @@ public class FAQController {
 
     private final FAQService faqService;
 
-    // FAQ 목록 조회
+    // FAQ 조회
     @GetMapping("list")
     public ResponseEntity<List<FAQListDTO>> getFAQList(){
 
@@ -35,6 +35,26 @@ public class FAQController {
         faqService.insertFAQ(faqEditDTO);
 
         return ResponseEntity.ok("Insert successful");
+    }
+
+    // FAQ 수정
+    @PostMapping("update")
+    public ResponseEntity<String> updateFAQ(@RequestBody FAQEditDTO faqEditDTO){
+        log.info("updateFAQ");
+
+        faqService.updateFAQ(faqEditDTO);
+
+        return ResponseEntity.ok("Update successful");
+    }
+
+    // FAQ 소프트 삭제
+    @PostMapping("delete/{fno}")
+    public ResponseEntity<String> logicalDeleteFAQ(@PathVariable long fno) {
+        log.info("softDeleteFAQ: {}", fno);
+
+        faqService.softDeleteFAQ(fno);
+
+        return ResponseEntity.ok("Logical delete successful");
     }
 
 }
