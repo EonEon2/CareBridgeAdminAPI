@@ -1,11 +1,9 @@
 package org.carebridge.carebridgeadminapi.common.page;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
 @ToString
 public class PageRequest {
 
