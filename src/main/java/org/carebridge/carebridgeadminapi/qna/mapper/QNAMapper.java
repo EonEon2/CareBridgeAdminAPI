@@ -14,4 +14,6 @@ public interface QNAMapper {
 
    Long insert(QNARegisterDTO qnaRegisterDTO);
 
+   int delete(Long qno);
+
 }

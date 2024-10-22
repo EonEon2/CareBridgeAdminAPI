@@ -35,6 +35,13 @@ public class QNAController {
 
     }
 
+    @PostMapping("delete/{qno}")
+    public String delete(@PathVariable("qno") Long qno) {
+
+        qnaService.delete(qno);
+
+        return "Success delete";
+    }
 
 
 }

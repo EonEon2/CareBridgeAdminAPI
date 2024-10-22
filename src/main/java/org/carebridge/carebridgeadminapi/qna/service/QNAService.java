@@ -44,5 +44,11 @@ public class QNAService {
         qnaMapper.insert(registerDTO);
     }
 
+    public void delete(Long qno) {
+        log.info("delete Service");
+
+        qnaMapper.delete(qno);
+    }
+
 
 }

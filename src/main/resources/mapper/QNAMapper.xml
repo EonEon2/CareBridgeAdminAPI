@@ -23,6 +23,14 @@
         values(#{qtitle}, #{qcontent})
     </insert>
 
+    <delete id="delete">
+
+        UPDATE qna
+        SET qdelete = true
+        WHERE
+        qno = #{qno}
+
+    </delete>
 
 
 </mapper>
