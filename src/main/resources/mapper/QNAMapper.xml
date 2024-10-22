@@ -25,12 +25,25 @@
 
     <delete id="delete">
 
-        UPDATE qna
-        SET qdelete = true
+        UPDATE
+            qna
+        SET
+            qdelete = true
         WHERE
-        qno = #{qno}
+            qno = #{qno}
 
     </delete>
+
+    <update id="update">
+
+        UPDATE
+            qna
+        SET
+            qtitle = #{dto.qtitle}, qcontent = #{dto.qcontent}, modDate = now()
+        WHERE
+            qno = #{qno}
+
+    </update>
 
 
 </mapper>

@@ -6,6 +6,7 @@ import org.carebridge.carebridgeadminapi.common.page.PageRequest;
 import org.carebridge.carebridgeadminapi.common.page.PageResponse;
 import org.carebridge.carebridgeadminapi.qna.dto.QNAListDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNARegisterDTO;
+import org.carebridge.carebridgeadminapi.qna.dto.QNAUpdateDTO;
 import org.carebridge.carebridgeadminapi.qna.mapper.QNAMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -48,6 +49,12 @@ public class QNAService {
         log.info("delete Service");
 
         qnaMapper.delete(qno);
+    }
+
+    public void update(Long qno, QNAUpdateDTO dto) {
+        log.info("update Service");
+
+        qnaMapper.update(qno,dto);
     }
 
 

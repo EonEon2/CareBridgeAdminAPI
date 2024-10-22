@@ -6,6 +6,7 @@ import org.carebridge.carebridgeadminapi.common.page.PageRequest;
 import org.carebridge.carebridgeadminapi.common.page.PageResponse;
 import org.carebridge.carebridgeadminapi.qna.dto.QNAListDTO;
 import org.carebridge.carebridgeadminapi.qna.dto.QNARegisterDTO;
+import org.carebridge.carebridgeadminapi.qna.dto.QNAUpdateDTO;
 import org.carebridge.carebridgeadminapi.qna.service.QNAService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +42,14 @@ public class QNAController {
         qnaService.delete(qno);
 
         return "Success delete";
+    }
+
+    @PostMapping(value="update/{qno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String update(@PathVariable("qno") Long qno, @RequestBody QNAUpdateDTO qnaUpdateDTO) {
+
+        qnaService.update(qno, qnaUpdateDTO);
+
+        return "Success update";
     }
 
 
