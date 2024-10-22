@@ -16,7 +16,7 @@
 
     <select id="getList" resultType="CareGiverListDTO">
         select
-            *
+            cgno, cgname, cgage, cgphone, cgemail, cgpw
         from
             caregiver
         where
@@ -58,7 +58,7 @@
 
     <select id="getOne" resultType="CareGiverReadDTO">
         select
-            *
+            cgno, cgname, cgage, cgphone, cgemail, cgpw
         from
             caregiver
         where
