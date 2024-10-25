@@ -5,6 +5,12 @@
 
 <mapper namespace="org.carebridge.carebridgeadminapi.faq.mapper.FAQMapper">
 
+    <select id="count" resultType="int">
+        select count(fno)
+        from faq
+        where fno > 0 and fdelete = false
+    </select>
+
     <!-- FAQ 조회  -->
     <select id="getAllFAQs" resultType="FAQListDTO">
         select * from faq

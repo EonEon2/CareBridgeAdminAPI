@@ -2,9 +2,12 @@ package org.carebridge.carebridgeadminapi.faq.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.carebridge.carebridgeadminapi.common.page.PageRequest;
+import org.carebridge.carebridgeadminapi.common.page.PageResponse;
 import org.carebridge.carebridgeadminapi.faq.dto.FAQUpdateDTO;
 import org.carebridge.carebridgeadminapi.faq.dto.FAQListDTO;
 import org.carebridge.carebridgeadminapi.faq.mapper.FAQMapper;
+import org.carebridge.carebridgeadminapi.qna.dto.QNAListDTO;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,9 +22,17 @@ public class FAQService {
     private final FAQMapper faqMapper;
 
     // FAQ 목록 조회
-    public List<FAQListDTO> getList() {
+    public PageResponse<FAQListDTO> getFAQListAll(PageRequest pageRequest) {
+        log.info("getFAQList");
 
-        return faqMapper.getAllFAQs();
+        PageResponse<FAQListDTO> pageResponse =
+                PageResponse.<FAQListDTO>with()
+                        .list(faqMapper.getAllFAQs(pageRequest))
+                        .total(faqMapper.count(pageRequest))
+                        .pageRequest(pageRequest)
+                        .build();
+
+        return pageResponse;
     }
 
     // FAQ 등록
