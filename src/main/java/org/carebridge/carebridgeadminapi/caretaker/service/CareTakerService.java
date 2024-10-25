@@ -1,4 +1,4 @@
-package org.carebridge.carebridgeadminapi.service;
+package org.carebridge.carebridgeadminapi.caretaker.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

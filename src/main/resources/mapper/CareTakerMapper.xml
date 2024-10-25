@@ -7,10 +7,11 @@
 
     <select id="careTakerList" resultType="CareTakerDTO">
 
-        select *
+        select
+            ctno, ctname, ctage, ctaddress, ctphone, ctemail, ctpw
         from
             caretaker
-        where ctdelete = 0
+        where ctdelete = false
         order by
             ctno desc
         limit
@@ -21,7 +22,7 @@
     <select id="count" resultType="int">
         select count(ctno)
         from caretaker
-        where ctno > 0
+        where ctno > 0 and ctdelete = false
     </select>
 
     <delete id="delete">

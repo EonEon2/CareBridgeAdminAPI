@@ -2,6 +2,8 @@ package org.carebridge.carebridgeadminapi.faq.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.carebridge.carebridgeadminapi.common.page.PageRequest;
+import org.carebridge.carebridgeadminapi.common.page.PageResponse;
 import org.carebridge.carebridgeadminapi.faq.dto.FAQUpdateDTO;
 import org.carebridge.carebridgeadminapi.faq.dto.FAQListDTO;
 import org.carebridge.carebridgeadminapi.faq.service.FAQService;
@@ -20,11 +22,11 @@ public class FAQController {
 
     // FAQ 조회
     @GetMapping("list")
-    public ResponseEntity<List<FAQListDTO>> getFAQList(){
+    public ResponseEntity<PageResponse<FAQListDTO>> getFAQList(PageRequest pageRequest){
 
         log.info("getFAQList");
 
-        return ResponseEntity.ok(faqService.getList());
+        return ResponseEntity.ok(faqService.getFAQListAll(pageRequest));
     }
 
     // FAQ 등록
