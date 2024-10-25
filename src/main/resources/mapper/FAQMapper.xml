@@ -13,8 +13,12 @@
 
     <!-- FAQ 조회  -->
     <select id="getAllFAQs" resultType="FAQListDTO">
-        select * from faq
-        where fdelete = false
+        select
+            *
+        from
+            faq
+        where
+            fno > 0 and fdelete = false
     </select>
 
     <!-- FAQ 등록 -->
