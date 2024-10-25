@@ -1,5 +1,6 @@
 package org.carebridge.carebridgeadminapi.faq.mapper;
 import org.carebridge.carebridgeadminapi.common.page.PageRequest;
+import org.carebridge.carebridgeadminapi.common.page.PageResponse;
 import org.carebridge.carebridgeadminapi.faq.dto.FAQUpdateDTO;
 import org.carebridge.carebridgeadminapi.faq.dto.FAQListDTO;
 

@@ -19,6 +19,7 @@
             faq
         where
             fno > 0 and fdelete = false
+        limit #{skip}, #{size}
     </select>
 
     <!-- FAQ 등록 -->
