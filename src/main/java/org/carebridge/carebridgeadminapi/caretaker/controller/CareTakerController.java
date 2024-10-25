@@ -26,6 +26,7 @@ public class CareTakerController {
     public ResponseEntity<PageResponse<CareTakerDTO>> list(PageRequest pageRequest) {
 
         log.info("get careTaker list----------------------");
+        log.info("care taker");
 
         return ResponseEntity.ok(careTakerService.getCareTakerList(pageRequest));
     }
