@@ -21,8 +21,8 @@
     <update id="updateFAQ" parameterType="FAQUpdateDTO">
         update faq
         set fcategory = #{fcategory},
-            ftitle = #{ftitle},
-            fcontent = #{fcontent}
+        ftitle = #{ftitle},
+        fcontent = #{fcontent}
         where fno = #{fno}
     </update>
 
