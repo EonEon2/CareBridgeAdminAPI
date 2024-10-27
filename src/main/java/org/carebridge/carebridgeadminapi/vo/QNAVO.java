@@ -18,6 +18,7 @@ public class QNAVO {
     private String qtitle;
     private String qcontent;
     private boolean qdelete;
+    private boolean checkAnswer;
 
     private LocalDateTime regDate;
     private LocalDateTime modDate;

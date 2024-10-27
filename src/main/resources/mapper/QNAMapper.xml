@@ -6,7 +6,7 @@
 <mapper namespace="org.carebridge.carebridgeadminapi.qna.mapper.QNAMapper">
 
     <select id="getList" resultType="QNAListDTO">
-        select qno, qtitle, qdelete, regDate, modDate
+        select qno, qtitle, checkAnswer, regDate, modDate,  qdelete
         from qna
         where qdelete = 0
         order by qno desc
@@ -40,7 +40,7 @@
         UPDATE
             qna
         SET
-            qtitle = #{dto.qtitle}, qcontent = #{dto.qcontent}, modDate = now()
+            qtitle = #{dto.qtitle}, qcontent = #{dto.qcontent}, modDate = now(), checkAnswer = #{checkAnswer}
         WHERE
             qno = #{qno}
 
@@ -48,7 +48,7 @@
 
     <select id = 'getOne' resultType="QNADetailDTO">
         select
-            qno, qtitle, qcontent, regDate ,modDate
+            qno, qtitle, qcontent, checkAnswer, regDate ,modDate
         from
             qna
         where
