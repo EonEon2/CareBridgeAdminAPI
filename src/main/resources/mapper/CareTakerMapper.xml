@@ -22,7 +22,7 @@
     <select id="count" resultType="int">
         select count(ctno)
         from caretaker
-        where ctno > 0
+        where ctno > 0 and ctdelete = false
     </select>
 
     <delete id="delete">
