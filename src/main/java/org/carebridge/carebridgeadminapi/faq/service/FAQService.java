@@ -21,20 +21,6 @@ public class FAQService {
 
     private final FAQMapper faqMapper;
 
-    // FAQ 전체 목록 조회
-    public PageResponse<FAQListDTO> getFAQListAll(PageRequest pageRequest) {
-        log.info("getFAQListAll");
-
-        PageResponse<FAQListDTO> pageResponse =
-                PageResponse.<FAQListDTO>with()
-                        .list(faqMapper.getAllFAQs(pageRequest))
-                        .total(faqMapper.count(pageRequest))
-                        .pageRequest(pageRequest)
-                        .build();
-
-        return pageResponse;
-    }
-
     // FAQ 간병인 목록 조회
     public PageResponse<FAQListDTO> getGiverFAQList(PageRequest pageRequest) {
         log.info("getGiverFAQList");
@@ -42,7 +28,7 @@ public class FAQService {
         PageResponse<FAQListDTO> pageResponse =
                 PageResponse.<FAQListDTO>with()
                         .list(faqMapper.getGiverFAQs(pageRequest))
-                        .total(faqMapper.count(pageRequest))
+                        .total(faqMapper.countGiverFAQ(pageRequest))
                         .pageRequest(pageRequest)
                         .build();
 
@@ -56,7 +42,7 @@ public class FAQService {
         PageResponse<FAQListDTO> pageResponse =
                 PageResponse.<FAQListDTO>with()
                         .list(faqMapper.getTakerFAQs(pageRequest))
-                        .total(faqMapper.count(pageRequest))
+                        .total(faqMapper.countTakerFAQ(pageRequest))
                         .pageRequest(pageRequest)
                         .build();
 

@@ -21,14 +21,6 @@ public class FAQController {
 
     private final FAQService faqService;
 
-    // FAQ 전체 조회
-    @GetMapping("list")
-    public ResponseEntity<PageResponse<FAQListDTO>> getFAQList(PageRequest pageRequest){
-        log.info("getFAQList");
-
-        return ResponseEntity.ok(faqService.getFAQListAll(pageRequest));
-    }
-
     // FAQ 간병인 조회
     @GetMapping("giverlist")
     public ResponseEntity<PageResponse<FAQListDTO>> getFAQListGiver(PageRequest pageRequest){
