@@ -11,7 +11,16 @@
         from
             caregiver
         where
-            cgno > 0 and cgdelete = false
+            cgno > 0 and cgdelete = false and cgapproved = true
+    </select>
+
+    <select id="countNotApproved" resultType="int">
+        select
+        count(cgno)
+        from
+        caregiver
+        where
+        cgno > 0 and cgdelete = false and cgapproved = false
     </select>
 
     <select id="getList" resultType="CareGiverListDTO">
@@ -20,7 +29,7 @@
         from
             caregiver
         where
-            cgno > 0 and cgdelete = false
+            cgno > 0 and cgdelete = false and cgapproved = true
         order by
             cgno desc
         limit
@@ -50,8 +59,7 @@
             cgname = #{dto.cgname},
             cgage = #{dto.cgage},
             cgphone = #{dto.cgphone},
-            cgemail = #{dto.cgemail},
-            cgpw = #{dto.cgpw}
+            cgemail = #{dto.cgemail}
         where
             cgno = #{cgno}
     </update>
@@ -63,6 +71,28 @@
             caregiver
         where
             cgno = #{cgno}
+    </select>
+
+    <update id="approve">
+        update
+            caregiver
+        set
+            cgapproved = true
+        where
+            cgno = #{cgno}
+    </update>
+
+    <select id="getNotApprovedGiverList" resultType="CareGiverListDTO">
+        select
+            cgno, cgname, cgage, cgphone, cgemail, cgpw
+        from
+            caregiver
+        where
+            cgno > 0 and cgdelete = false and cgapproved = false
+        order by
+            cgno asc
+        limit
+            #{skip}, #{size}
     </select>
 
 </mapper>

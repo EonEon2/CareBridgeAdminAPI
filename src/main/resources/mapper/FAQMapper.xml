@@ -5,13 +5,19 @@
 
 <mapper namespace="org.carebridge.carebridgeadminapi.faq.mapper.FAQMapper">
 
-    <select id="count" resultType="int">
+    <select id="countGiverFAQ" resultType="int">
         select count(fno)
         from faq
-        where fno > 0 and fdelete = false
+        where fno > 0 and fdelete = false and fcategory = 1
     </select>
 
-    <!-- FAQ 조회  -->
+    <select id="countTakerFAQ" resultType="int">
+        select count(fno)
+        from faq
+        where fno > 0 and fdelete = false and fcategory = 2
+    </select>
+
+    <!-- FAQ 전체 조회  -->
     <select id="getAllFAQs" resultType="FAQListDTO">
         select
             *
@@ -21,6 +27,29 @@
             fno > 0 and fdelete = false
         limit #{skip}, #{size}
     </select>
+    
+    <!-- FAQ 간병인 조회  -->
+    <select id="getGiverFAQs" resultType="FAQListDTO">
+        select
+            *
+        from
+            faq
+        where
+            fcategory = 1 and fno > 0 and fdelete = false
+        limit #{skip}, #{size}
+    </select>
+
+    <!-- FAQ 보호자 조회  -->
+    <select id="getTakerFAQs" resultType="FAQListDTO">
+        select
+        *
+        from
+        faq
+        where
+        fcategory = 2 and fno > 0 and fdelete = false
+        limit #{skip}, #{size}
+    </select>
+
 
     <!-- FAQ 등록 -->
     <insert id="insertFAQ" parameterType="FAQUpdateDTO" useGeneratedKeys="true" keyProperty="fno">
@@ -32,8 +61,8 @@
     <update id="updateFAQ" parameterType="FAQUpdateDTO">
         update faq
         set fcategory = #{fcategory},
-            ftitle = #{ftitle},
-            fcontent = #{fcontent}
+        ftitle = #{ftitle},
+        fcontent = #{fcontent}
         where fno = #{fno}
     </update>
 

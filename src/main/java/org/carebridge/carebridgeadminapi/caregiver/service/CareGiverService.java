@@ -52,4 +52,21 @@ public class CareGiverService {
 
         return careGiverMapper.getOne(cgno);
     }
+
+    public void approve(Long cgno) {
+
+        careGiverMapper.approve(cgno);
+    }
+
+    public PageResponse<CareGiverListDTO> getNotApprovedGiverList(PageRequest pageRequest) {
+
+        PageResponse<CareGiverListDTO> pageResponse =
+                PageResponse.<CareGiverListDTO>with()
+                        .list(careGiverMapper.getNotApprovedGiverList(pageRequest))
+                        .total(careGiverMapper.countNotApproved(pageRequest))
+                        .pageRequest(pageRequest)
+                        .build();
+
+        return pageResponse;
+    }
 }

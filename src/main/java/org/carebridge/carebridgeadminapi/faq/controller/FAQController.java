@@ -7,6 +7,7 @@ import org.carebridge.carebridgeadminapi.common.page.PageResponse;
 import org.carebridge.carebridgeadminapi.faq.dto.FAQUpdateDTO;
 import org.carebridge.carebridgeadminapi.faq.dto.FAQListDTO;
 import org.carebridge.carebridgeadminapi.faq.service.FAQService;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,13 +21,20 @@ public class FAQController {
 
     private final FAQService faqService;
 
-    // FAQ 조회
-    @GetMapping("list")
-    public ResponseEntity<PageResponse<FAQListDTO>> getFAQList(PageRequest pageRequest){
+    // FAQ 간병인 조회
+    @GetMapping("giverlist")
+    public ResponseEntity<PageResponse<FAQListDTO>> getFAQListGiver(PageRequest pageRequest){
+        log.info("getFAQListGiver");
 
-        log.info("getFAQList");
+        return ResponseEntity.ok(faqService.getGiverFAQList(pageRequest));
+    }
 
-        return ResponseEntity.ok(faqService.getFAQListAll(pageRequest));
+    // FAQ 보호자 조회
+    @GetMapping("takerlist")
+    public ResponseEntity<PageResponse<FAQListDTO>> getFAQListTaker(PageRequest pageRequest){
+        log.info("getFAQListTaker");
+
+        return ResponseEntity.ok(faqService.getTakerFAQList(pageRequest));
     }
 
     // FAQ 등록
@@ -40,11 +48,11 @@ public class FAQController {
     }
 
     // FAQ 수정
-    @PostMapping("update")
-    public ResponseEntity<String> updateFAQ(@RequestBody FAQUpdateDTO faqUpdateDTO){
+    @PostMapping(value = "update/{fno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> updateFAQ(@PathVariable Long fno, @RequestBody FAQUpdateDTO faqUpdateDTO){
         log.info("updateFAQ");
 
-        faqService.updateFAQ(faqUpdateDTO);
+        faqService.updateFAQ(fno, faqUpdateDTO);
 
         return ResponseEntity.ok("Update successful");
     }

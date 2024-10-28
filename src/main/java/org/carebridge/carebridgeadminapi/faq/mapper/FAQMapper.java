@@ -8,16 +8,21 @@ import java.util.List;
 
 public interface FAQMapper {
 
-    int count(PageRequest pageRequest);
+    int countGiverFAQ(PageRequest pageRequest);
 
-    // FAQ 조회
-    List<FAQListDTO> getAllFAQs(PageRequest pageRequest);
+    int countTakerFAQ(PageRequest pageRequest);
+
+    // FAQ 간병인 조회
+    List<FAQListDTO> getGiverFAQs(PageRequest pageRequest);
+
+    // FAQ 보호자 조회
+    List<FAQListDTO> getTakerFAQs(PageRequest pageRequest);
 
     // FAQ 추가
     void insertFAQ(FAQUpdateDTO faqUpdateDTO);
 
     // FAQ 수정
-    void updateFAQ(FAQUpdateDTO faqUpdateDTO);
+    void updateFAQ(Long fno, FAQUpdateDTO faqUpdateDTO);
 
     // FAQ 삭제
     void softDeleteFAQ(long fno);
