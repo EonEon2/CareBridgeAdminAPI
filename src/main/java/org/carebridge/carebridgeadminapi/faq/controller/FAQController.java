@@ -56,11 +56,11 @@ public class FAQController {
     }
 
     // FAQ 수정
-    @PostMapping(value = "update", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> updateFAQ(@RequestBody FAQUpdateDTO faqUpdateDTO){
+    @PostMapping(value = "update/{fno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> updateFAQ(@PathVariable Long fno, @RequestBody FAQUpdateDTO faqUpdateDTO){
         log.info("updateFAQ");
 
-        faqService.updateFAQ(faqUpdateDTO);
+        faqService.updateFAQ(fno, faqUpdateDTO);
 
         return ResponseEntity.ok("Update successful");
     }

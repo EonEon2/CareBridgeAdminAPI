@@ -72,9 +72,9 @@ public class FAQService {
     }
 
     // FAQ 수정
-    public void updateFAQ(FAQUpdateDTO faqUpdateDTO) {
+    public void updateFAQ(Long fno, FAQUpdateDTO faqUpdateDTO) {
 
-        faqMapper.updateFAQ(faqUpdateDTO);
+        faqMapper.updateFAQ(fno, faqUpdateDTO);
     }
 
     // FAQ 소프트 삭제
