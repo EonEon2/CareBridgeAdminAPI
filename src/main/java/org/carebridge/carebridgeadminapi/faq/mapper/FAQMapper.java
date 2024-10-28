@@ -10,8 +10,14 @@ public interface FAQMapper {
 
     int count(PageRequest pageRequest);
 
-    // FAQ 조회
+    // FAQ 전체 조회
     List<FAQListDTO> getAllFAQs(PageRequest pageRequest);
+
+    // FAQ 간병인 조회
+    List<FAQListDTO> getGiverFAQs(PageRequest pageRequest);
+
+    // FAQ 보호자 조회
+    List<FAQListDTO> getTakerFAQs(PageRequest pageRequest);
 
     // FAQ 추가
     void insertFAQ(FAQUpdateDTO faqUpdateDTO);

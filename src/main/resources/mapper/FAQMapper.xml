@@ -11,7 +11,7 @@
         where fno > 0 and fdelete = false
     </select>
 
-    <!-- FAQ 조회  -->
+    <!-- FAQ 전체 조회  -->
     <select id="getAllFAQs" resultType="FAQListDTO">
         select
             *
@@ -21,6 +21,29 @@
             fno > 0 and fdelete = false
         limit #{skip}, #{size}
     </select>
+    
+    <!-- FAQ 간병인 조회  -->
+    <select id="getGiverFAQs" resultType="FAQListDTO">
+        select
+            *
+        from
+            faq
+        where
+            fcategory = 1 and fno > 0 and fdelete = false
+        limit #{skip}, #{size}
+    </select>
+
+    <!-- FAQ 보호자 조회  -->
+    <select id="getTakerFAQs" resultType="FAQListDTO">
+        select
+        *
+        from
+        faq
+        where
+        fcategory = 2 and fno > 0 and fdelete = false
+        limit #{skip}, #{size}
+    </select>
+
 
     <!-- FAQ 등록 -->
     <insert id="insertFAQ" parameterType="FAQUpdateDTO" useGeneratedKeys="true" keyProperty="fno">
@@ -32,8 +55,8 @@
     <update id="updateFAQ" parameterType="FAQUpdateDTO">
         update faq
         set fcategory = #{fcategory},
-            ftitle = #{ftitle},
-            fcontent = #{fcontent}
+        ftitle = #{ftitle},
+        fcontent = #{fcontent}
         where fno = #{fno}
     </update>
 
