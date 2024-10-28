@@ -113,7 +113,7 @@
 
     <select id="getMatchedGiverList" resultType="CareGiverMatchedListDTO">
         select
-            cg.cgname, c.ctname, c.start, c.end
+            c.cmno, cg.cgname, c.ctname, c.start, c.end
         from
             caregiver cg
         inner join

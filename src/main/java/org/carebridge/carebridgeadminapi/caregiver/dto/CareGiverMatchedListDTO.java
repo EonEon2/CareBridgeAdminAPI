@@ -10,6 +10,8 @@ import java.sql.Timestamp;
 @Builder
 public class CareGiverMatchedListDTO {
 
+    private Long cmno;
+
     private String cgname;
 
     private String ctname;
