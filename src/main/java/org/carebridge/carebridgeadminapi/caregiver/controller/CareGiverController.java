@@ -57,4 +57,12 @@ public class CareGiverController {
 
         return ResponseEntity.ok(careGiverService.getOne(cpno));
     }
+
+    @GetMapping("notapprovedgivers")
+    public ResponseEntity<PageResponse<CareGiverListDTO>> getNotApprovedGivers(PageRequest pageRequest) {
+
+        return ResponseEntity.ok(careGiverService.getNotApprovedGiverList(pageRequest));
+    }
+
+
 }

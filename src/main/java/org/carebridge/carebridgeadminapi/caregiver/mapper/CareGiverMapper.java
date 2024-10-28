@@ -15,6 +15,8 @@ public interface CareGiverMapper {
 
     int count(PageRequest pageRequest);
 
+    int countNotApproved(PageRequest pageRequest);
+
     Long insert(CareGiverRegisterDTO registerDTO);
 
     void delete(Long cgno);
@@ -22,4 +24,8 @@ public interface CareGiverMapper {
     void update( @Param("cgno") Long cgno, @Param("dto") CareGiverUpdateDTO dto);
 
     CareGiverReadDTO getOne(Long cgno);
+
+    void approve(Long cgno);
+
+    List<CareGiverListDTO> getNotApprovedGiverList(PageRequest pageRequest);
 }
