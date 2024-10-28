@@ -12,6 +12,4 @@ public class CareGiverReadDTO {
     private int cgage;
     private String cgphone;
     private String cgemail;
-
-    private String cgpw;
 }
