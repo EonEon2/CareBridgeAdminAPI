@@ -40,7 +40,7 @@
         UPDATE
             qna
         SET
-            qtitle = #{dto.qtitle}, qcontent = #{dto.qcontent}, modDate = now(), checkAnswer = #{checkAnswer}
+            qtitle = #{dto.qtitle}, qcontent = #{dto.qcontent}, modDate = now(), checkAnswer = 1
         WHERE
             qno = #{qno}
 
