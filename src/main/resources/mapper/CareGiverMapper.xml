@@ -50,7 +50,7 @@
             cgname = #{dto.cgname},
             cgage = #{dto.cgage},
             cgphone = #{dto.cgphone},
-            cgemail = #{dto.cgemail},
+            cgemail = #{dto.cgemail}
         where
             cgno = #{cgno}
     </update>
