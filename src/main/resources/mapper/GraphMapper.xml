@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.carebridge.carebridgeadminapi.graph.mapper.GraphMapper">
+
+    <select id="GiverCount" resultType="int">
+        select(count(cgno))
+        from
+            care_match
+
+    </select>
+
+    <select id="TakerCount" resultType="int">
+        select(count(ctno))
+        from
+            care_match
+    </select>
+
+    <select id="NotMatchTakerCount" resultType="int">
+        select count(ctno)
+        from
+            caretaker
+    </select>
+
+    <select id="NotMatchGiverCount" resultType="int">
+        select count(cgno)
+        from
+        caregiver
+    </select>
+
+
+
+</mapper>
