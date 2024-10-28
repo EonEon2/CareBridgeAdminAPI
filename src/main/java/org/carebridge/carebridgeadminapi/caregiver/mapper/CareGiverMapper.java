@@ -1,10 +1,7 @@
 package org.carebridge.carebridgeadminapi.caregiver.mapper;
 
 import org.apache.ibatis.annotations.Param;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverListDTO;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverReadDTO;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverRegisterDTO;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverUpdateDTO;
+import org.carebridge.carebridgeadminapi.caregiver.dto.*;
 import org.carebridge.carebridgeadminapi.common.page.PageRequest;
 
 import java.util.List;
@@ -17,6 +14,8 @@ public interface CareGiverMapper {
 
     int countNotApproved(PageRequest pageRequest);
 
+    int countMatchedList(@Param("cgno") Long cgno, @Param("pageRequest") PageRequest pageRequest);
+
     Long insert(CareGiverRegisterDTO registerDTO);
 
     void delete(Long cgno);
@@ -28,4 +27,7 @@ public interface CareGiverMapper {
     void approve(Long cgno);
 
     List<CareGiverListDTO> getNotApprovedGiverList(PageRequest pageRequest);
+
+    List<CareGiverMatchedListDTO> getMatchedGiverList
+            (@Param("cgno") Long cgno, @Param("pageRequest") PageRequest pageRequest);
 }

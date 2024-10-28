@@ -2,10 +2,8 @@ package org.carebridge.carebridgeadminapi.caregiver.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverListDTO;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverReadDTO;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverRegisterDTO;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverUpdateDTO;
+import org.apache.ibatis.annotations.Param;
+import org.carebridge.carebridgeadminapi.caregiver.dto.*;
 import org.carebridge.carebridgeadminapi.caregiver.mapper.CareGiverMapper;
 import org.carebridge.carebridgeadminapi.common.page.PageRequest;
 import org.carebridge.carebridgeadminapi.common.page.PageResponse;
@@ -64,6 +62,19 @@ public class CareGiverService {
                 PageResponse.<CareGiverListDTO>with()
                         .list(careGiverMapper.getNotApprovedGiverList(pageRequest))
                         .total(careGiverMapper.countNotApproved(pageRequest))
+                        .pageRequest(pageRequest)
+                        .build();
+
+        return pageResponse;
+    }
+
+    public PageResponse<CareGiverMatchedListDTO>
+        getMatchedGiverList(@Param("cgno") Long cgno, @Param("pageRequest") PageRequest pageRequest) {
+
+        PageResponse<CareGiverMatchedListDTO> pageResponse =
+                PageResponse.<CareGiverMatchedListDTO>with()
+                        .list(careGiverMapper.getMatchedGiverList(cgno, pageRequest))
+                        .total(careGiverMapper.countMatchedList(cgno, pageRequest))
                         .pageRequest(pageRequest)
                         .build();
 

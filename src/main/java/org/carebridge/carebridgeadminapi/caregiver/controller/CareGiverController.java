@@ -2,10 +2,7 @@ package org.carebridge.carebridgeadminapi.caregiver.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverListDTO;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverReadDTO;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverRegisterDTO;
-import org.carebridge.carebridgeadminapi.caregiver.dto.CareGiverUpdateDTO;
+import org.carebridge.carebridgeadminapi.caregiver.dto.*;
 import org.carebridge.carebridgeadminapi.caregiver.service.CareGiverService;
 import org.carebridge.carebridgeadminapi.common.page.PageRequest;
 import org.carebridge.carebridgeadminapi.common.page.PageResponse;
@@ -70,5 +67,12 @@ public class CareGiverController {
         careGiverService.approve(cgno);
 
         return "Success";
+    }
+
+    @GetMapping("matchedgiver/{cgno}")
+    public ResponseEntity<PageResponse<CareGiverMatchedListDTO>>
+        getMatchedGiverList(@PathVariable Long cgno,  PageRequest pageRequest) {
+
+        return ResponseEntity.ok(careGiverService.getMatchedGiverList(cgno, pageRequest));
     }
 }
