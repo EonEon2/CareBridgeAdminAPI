@@ -13,6 +13,7 @@ public class QNARegisterDTO {
     private Long qno;
     private String qtitle;
     private String qcontent;
+    private boolean checkAnswer;
 
     private LocalDateTime regDate;
     private LocalDateTime modDate;

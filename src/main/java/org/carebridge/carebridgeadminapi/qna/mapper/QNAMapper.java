@@ -22,5 +22,4 @@ public interface QNAMapper {
    int update(@Param("qno") Long qno, @Param("dto") QNAUpdateDTO qnaUpdateDTO);
 
    QNADetailDTO getOne(Long qno);
-
 }
