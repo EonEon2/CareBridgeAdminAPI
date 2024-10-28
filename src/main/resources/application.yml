@@ -9,6 +9,7 @@ spring:
     password: careuser
 
 
+
     hikari:
       minimum-idle: 1
       maximum-pool-size: 5
