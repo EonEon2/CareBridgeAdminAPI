@@ -8,10 +8,9 @@ import java.util.List;
 
 public interface FAQMapper {
 
-    int count(PageRequest pageRequest);
+    int countGiverFAQ(PageRequest pageRequest);
 
-    // FAQ 전체 조회
-    List<FAQListDTO> getAllFAQs(PageRequest pageRequest);
+    int countTakerFAQ(PageRequest pageRequest);
 
     // FAQ 간병인 조회
     List<FAQListDTO> getGiverFAQs(PageRequest pageRequest);
