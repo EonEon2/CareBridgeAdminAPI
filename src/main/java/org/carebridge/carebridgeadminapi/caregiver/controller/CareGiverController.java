@@ -64,5 +64,11 @@ public class CareGiverController {
         return ResponseEntity.ok(careGiverService.getNotApprovedGiverList(pageRequest));
     }
 
+    @PutMapping(value = "approve/{cgno}")
+    public String approve(@PathVariable Long cgno) {
 
+        careGiverService.approve(cgno);
+
+        return "Success";
+    }
 }
