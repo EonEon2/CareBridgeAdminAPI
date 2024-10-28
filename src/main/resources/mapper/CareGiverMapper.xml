@@ -51,7 +51,6 @@
             cgage = #{dto.cgage},
             cgphone = #{dto.cgphone},
             cgemail = #{dto.cgemail},
-            cgpw = #{dto.cgpw}
         where
             cgno = #{cgno}
     </update>
