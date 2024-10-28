@@ -11,6 +11,7 @@ public class QNAListDTO {
     private Long qno;
     private String qtitle;
     private boolean qdelete;
+    private boolean checkAnswer;
 
     private LocalDateTime regDate;
     private LocalDateTime modDate;
