@@ -38,24 +38,24 @@ public class GraphController {
         return ResponseEntity.ok(giverCount);
     }
 
-    @GetMapping("count/nmgiver")  // not match
-    public ResponseEntity<Integer> NotMatchGiverCount() {
+    @GetMapping("count/mgiver")  // not match
+    public ResponseEntity<Integer> MatchGiverCount() {
 
-        log.info("get NotMatchGiverCount");
+        log.info("get MatchGiverCount");
 
-        int NotMatchGivercount = graphService.NotMatchGiverCount();
+        int MatchGivercount = graphService.MatchGiverCount();
 
-        return ResponseEntity.ok(NotMatchGivercount);
+        return ResponseEntity.ok(MatchGivercount);
     }
 
-    @GetMapping("count/nmtaker")  // not match
-    public ResponseEntity<Integer> NotMatchTakerCount() {
+    @GetMapping("count/mtaker")  // not match
+    public ResponseEntity<Integer> MatchTakerCount() {
 
-        log.info("get NotMatchTakerCount");
+        log.info("get MatchTakerCount");
 
-        int NotMatchTakercount = graphService.NotMatchTakerCount();
+        int MatchTakercount = graphService.MatchTakerCount();
 
-        return ResponseEntity.ok(NotMatchTakercount);
+        return ResponseEntity.ok(MatchTakercount);
     }
 
 }

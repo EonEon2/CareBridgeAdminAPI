@@ -24,13 +24,13 @@ public class GraphService {
 
     }
 
-    public int NotMatchGiverCount(){
-        return graphMapper.NotMatchGiverCount();
+    public int MatchGiverCount(){
+        return graphMapper.MatchGiverCount();
 
     }
 
-    public int NotMatchTakerCount(){
-        return graphMapper.NotMatchTakerCount();
+    public int MatchTakerCount(){
+        return graphMapper.MatchTakerCount();
     }
 
 }
