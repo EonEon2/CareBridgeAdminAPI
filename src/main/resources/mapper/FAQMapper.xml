@@ -36,17 +36,21 @@
             faq
         where
             fcategory = 1 and fno > 0 and fdelete = false
+        order by
+            fno DESC
         limit #{skip}, #{size}
     </select>
 
     <!-- FAQ 보호자 조회  -->
     <select id="getTakerFAQs" resultType="FAQListDTO">
         select
-        *
+            *
         from
-        faq
+            faq
         where
-        fcategory = 2 and fno > 0 and fdelete = false
+            fcategory = 2 and fno > 0 and fdelete = false
+        order by
+            fno DESC
         limit #{skip}, #{size}
     </select>
 
