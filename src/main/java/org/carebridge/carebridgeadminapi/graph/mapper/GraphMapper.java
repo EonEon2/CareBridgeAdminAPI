@@ -10,8 +10,8 @@ public interface GraphMapper {
 
     int TakerCount(); // match
 
-    int NotMatchGiverCount();
+    int MatchGiverCount();
 
-    int NotMatchTakerCount();
+    int MatchTakerCount();
 
 }
