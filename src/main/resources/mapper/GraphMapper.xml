@@ -18,13 +18,13 @@
             care_match
     </select>
 
-    <select id="NotMatchTakerCount" resultType="int">
+    <select id="MatchTakerCount" resultType="int">
         select count(ctno)
         from
             caretaker
     </select>
 
-    <select id="NotMatchGiverCount" resultType="int">
+    <select id="MatchGiverCount" resultType="int">
         select count(cgno)
         from
         caregiver
