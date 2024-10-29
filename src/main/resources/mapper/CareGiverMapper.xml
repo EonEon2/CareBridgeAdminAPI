@@ -116,10 +116,10 @@
             c.cmno, cg.cgname, c.ctname, c.start, c.end
         from
             caregiver cg
-        inner join
+            inner join
             (
             select
-                ct.ctname, cm.start, cm.end, cm.cgno
+                cm.cmno, ct.ctname, cm.start, cm.end, cm.cgno
             from
                 care_match cm inner join caretaker ct on cm.ctno = ct.ctno
             ) c on cg.cgno = c.cgno
