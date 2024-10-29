@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.carebridge.carebridgeadminapi.caretaker.dto.CareTakerDTO;
 import org.carebridge.carebridgeadminapi.caretaker.dto.CareTakerDetailDTO;
+import org.carebridge.carebridgeadminapi.caretaker.dto.CareTakerMatchDTO;
 import org.carebridge.carebridgeadminapi.caretaker.dto.CareTakerUpdateDTO;
 import org.carebridge.carebridgeadminapi.common.page.PageRequest;
 import org.carebridge.carebridgeadminapi.common.page.PageResponse;
@@ -29,6 +30,15 @@ public class CareTakerController {
         log.info("care taker");
 
         return ResponseEntity.ok(careTakerService.getCareTakerList(pageRequest));
+    }
+
+
+    @GetMapping(value = "match/{ctno}")
+    public ResponseEntity<PageResponse<CareTakerMatchDTO>> match(@PathVariable Long ctno ,PageRequest pageRequest) {
+
+        log.info("get careTaker match---------------------");
+
+        return ResponseEntity.ok(careTakerService.getCareTakerMatchList(ctno, pageRequest));
     }
 
     @PostMapping(value = "delete/{ctno}")

@@ -19,6 +19,49 @@
 
     </select>
 
+    <select id="countMatchedList" resultType="int">
+        select
+        count(*)
+        from
+        caretaker ct
+        left join
+        (
+        select
+        cm.ctno
+        from
+        care_match cm inner join caregiver cg on cm.cgno = cg.cgno
+        ) c on ct.ctno = c.ctno
+        where
+        ct.ctno = #{ctno}
+
+
+    </select>
+
+    <select id="careTakerMatchList" resultType="CareTakerMatchDTO">
+
+        select
+        c.cmno, ct.ctname, c.cgname, c.start, c.end
+        from
+        caretaker ct
+        inner join
+        (
+        select
+        cm.cmno, cg.cgname, cm.start, cm.end, cm.ctno
+        from
+        care_match cm inner join caregiver cg on cm.cgno = cg.cgno
+        ) c on ct.ctno = c.ctno
+        where
+        ct.ctno = #{ctno}
+        order by
+        c.start desc
+        limit
+        #{pageRequest.skip}, #{pageRequest.size}
+
+
+
+
+    </select>
+
     <select id="count" resultType="int">
         select count(ctno)
         from caretaker
