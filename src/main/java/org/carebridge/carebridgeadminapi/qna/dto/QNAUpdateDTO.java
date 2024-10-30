@@ -14,7 +14,13 @@ public class QNAUpdateDTO {
     private String qcontent;
     private boolean checkAnswer;
 
+    private String cgemail;
+    private String cgname;
+    private String ctemail;
+    private String ctname;
+
+    private String qanswer;
+
     private LocalDateTime regDate;
     private LocalDateTime modDate;
-
 }
