@@ -46,9 +46,14 @@ public class CareGiverService {
         careGiverMapper.update(cgno, dto);
     }
 
-    public CareGiverReadDTO getOne(Long cgno) {
+    public CareGiverReadDTO getApprovedOne(Long cgno) {
 
-        return careGiverMapper.getOne(cgno);
+        return careGiverMapper.getApprovedOne(cgno);
+    }
+
+    public CareGiverReadDTO getNotApprovedOne(Long cgno) {
+
+        return careGiverMapper.getNotApprovedOne(cgno);
     }
 
     public void approve(Long cgno) {

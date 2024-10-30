@@ -80,7 +80,16 @@
             cgno = #{cgno}
     </update>
 
-    <select id="getOne" resultType="CareGiverReadDTO">
+    <select id="getApprovedOne" resultType="CareGiverReadDTO">
+        select
+            cgno, cgname, cgage, cgphone, cgemail, cgpw
+        from
+            caregiver
+        where
+            cgno = #{cgno} and cgapproved = true
+    </select>
+
+    <select id="getNotApprovedOne" resultType="CareGiverReadDTO">
         select
             cgno, cgname, cgage, cgphone, cgemail, cgpw
         from

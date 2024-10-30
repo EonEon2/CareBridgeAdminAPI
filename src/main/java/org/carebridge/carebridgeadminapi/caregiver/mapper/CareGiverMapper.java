@@ -22,7 +22,9 @@ public interface CareGiverMapper {
 
     void update( @Param("cgno") Long cgno, @Param("dto") CareGiverUpdateDTO dto);
 
-    CareGiverReadDTO getOne(Long cgno);
+    CareGiverReadDTO getApprovedOne(Long cgno);
+
+    CareGiverReadDTO getNotApprovedOne(Long cgno);
 
     void approve(Long cgno);
 

@@ -49,10 +49,16 @@ public class CareGiverController {
         return "Success";
     }
 
-    @GetMapping("read/{cpno}")
-    public ResponseEntity<CareGiverReadDTO> get(@PathVariable Long cpno) {
+    @GetMapping("read/approved/{cpno}")
+    public ResponseEntity<CareGiverReadDTO> getApprovedOne(@PathVariable Long cpno) {
 
-        return ResponseEntity.ok(careGiverService.getOne(cpno));
+        return ResponseEntity.ok(careGiverService.getApprovedOne(cpno));
+    }
+
+    @GetMapping("read/notapproved/{cpno}")
+    public ResponseEntity<CareGiverReadDTO> getNotApprovedOne(@PathVariable Long cpno) {
+
+        return ResponseEntity.ok(careGiverService.getNotApprovedOne(cpno));
     }
 
     @GetMapping("notapprovedgivers")
