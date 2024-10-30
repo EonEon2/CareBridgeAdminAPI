@@ -13,6 +13,10 @@ public class QNAListDTO {
     private boolean qdelete;
     private boolean checkAnswer;
 
+    private String cgemail;
+    private String ctemail;
+
+
     private LocalDateTime regDate;
     private LocalDateTime modDate;
 }
