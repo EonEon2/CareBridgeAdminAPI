@@ -52,7 +52,7 @@ public class CareGiverController {
     @GetMapping("read/approved/{cpno}")
     public ResponseEntity<CareGiverReadDTO> getApprovedOne(@PathVariable Long cpno) {
 
-        return ResponseEntity.ok(careGiverService.getApprovedOne(cpno));
+        return ResponseEntity.ok(careGiverService.getApprovedOne(cpno)); 
     }
 
     @GetMapping("read/notapproved/{cpno}")
