@@ -22,7 +22,7 @@ public interface FAQMapper {
     void insertFAQ(FAQUpdateDTO faqUpdateDTO);
 
     // FAQ 수정
-    void updateFAQ(Long fno, FAQUpdateDTO faqUpdateDTO);
+    void updateFAQ(FAQUpdateDTO faqUpdateDTO);
 
     // FAQ 삭제
     void softDeleteFAQ(long fno);
