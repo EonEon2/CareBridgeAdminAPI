@@ -86,7 +86,7 @@
         from
             caregiver
         where
-            cgno = #{cgno}
+            cgno = #{cgno} and cgdelete = false
     </select>
 
     <update id="approve">
